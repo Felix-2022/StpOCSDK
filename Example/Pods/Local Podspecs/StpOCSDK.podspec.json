@@ -1,0 +1,22 @@
+{
+  "name": "StpOCSDK",
+  "version": "0.1.0",
+  "summary": "A short description of StpOCSDK.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/aie-felix/StpOCSDK",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "aie-felix": "felix@aiedevice.com"
+  },
+  "source": {
+    "git": "https://github.com/aie-felix/StpOCSDK.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "StpOCSDK/Classes/**/*"
+}
