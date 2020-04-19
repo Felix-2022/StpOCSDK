@@ -10,7 +10,10 @@
 #endif
 #endif
 
+#import "NSObject+YYModel.h"
+#import "YYClassInfo.h"
+#import "YYModel.h"
 
-FOUNDATION_EXPORT double Pods_StpOCSDK_TestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_StpOCSDK_TestsVersionString[];
+FOUNDATION_EXPORT double YYModelVersionNumber;
+FOUNDATION_EXPORT const unsigned char YYModelVersionString[];
 
