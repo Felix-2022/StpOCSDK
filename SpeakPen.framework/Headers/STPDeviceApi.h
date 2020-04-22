@@ -1,10 +1,4 @@
-//
-//  STPDeviceApi.h
-//  Pods
-//
-//  Created by kris on 16/11/12.
-//
-//
+ 
 
 #import <Foundation/Foundation.h>
 #import "STPDeviceModel.h"

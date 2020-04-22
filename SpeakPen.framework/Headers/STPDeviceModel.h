@@ -1,16 +1,10 @@
-//
-//  STPDeviceModel.h
-//  Pods
-//
-//  Created by kris on 16/11/12.
-//
-//
+ 
 
 #import <Foundation/Foundation.h>
 @class STPBabyModel;
 @class STPPlayInfoModel;
 NS_ASSUME_NONNULL_BEGIN
-@interface RBDeviceUser : NSObject
+@interface STPDeviceUser : NSObject
 @property (nonatomic,strong) NSString *userID;//用户的userID
 @property (nonatomic,strong) NSString *headimg;// 用户头像
 @property (nonatomic,strong) NSString *name;//用户名称
@@ -36,9 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) NSInteger battery;//设备当前电量
 @property (nonatomic,strong) NSString*wifissid;
 @property (nonatomic,strong) NSString*index_config;
-@property (nonatomic,strong) NSArray <RBDeviceUser*>*users;//绑定当前的设备的用户组
+@property (nonatomic,strong) NSArray <STPDeviceUser*>*users;//绑定当前的设备的用户组
 @property (nonatomic,assign) BOOL isEarLightOn;
 @property (nonatomic,assign) BOOL isChildLockOn;
+@property (nonatomic,strong) NSString* appId; 
 @end
 
 @interface STPDeviceModel : NSObject

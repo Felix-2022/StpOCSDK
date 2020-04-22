@@ -1,11 +1,4 @@
-//
-//  STPAuthApi.h
-//  Pods
-//
-//  Created by kris on 16/11/12.
-//
-//
-
+ 
 #import <Foundation/Foundation.h>
 #import "STPUserModel.h"
 
@@ -99,5 +92,9 @@ NS_ASSUME_NONNULL_BEGIN
  
  */
 + (void)resetPassword:(NSString *_Nonnull)password phoneNum:(NSString*_Nonnull) phoneNum  code :(NSString *_Nonnull)code  completionBlock:(nullable void (^)(BOOL isSuccess,NSError *error)) completionBlock;
+
+
++ (void)logOut:(void (^)(BOOL isSuccess,NSError *error))  block;
+
 @end
 NS_ASSUME_NONNULL_END

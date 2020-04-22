@@ -1,10 +1,4 @@
-//
-//  STPStudyReportApi.h
-//  SpeakPen
-//
-//  Created by stp on 2020/4/2.
-//  Copyright © 2020 stp. All rights reserved.
-//
+ 
 
 #import <Foundation/Foundation.h>
 #import "STPStudyReportModel.h"

@@ -1,10 +1,4 @@
-//
-//  STPUserApi.h
-//  Pods
-//
-//  Created by kris on 2017/8/25.
-//
-//
+ 
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

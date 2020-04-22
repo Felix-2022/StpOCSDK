@@ -1,11 +1,4 @@
-//
-//  STPPictureBookApi.h
-//  SpeakPen
-//
-//  Created by stp on 2020/3/31.
-//  Copyright © 2020 stp. All rights reserved.
-//
-
+ 
 #import <Foundation/Foundation.h>
 #import "STPPicBookResourceModel.h"
 

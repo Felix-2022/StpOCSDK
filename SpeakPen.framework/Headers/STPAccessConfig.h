@@ -1,20 +1,13 @@
-//
-//  STPAccessConfig.h
-//  SpeakPenAPIDemo
-//
-//  Created by kris on 2017/4/19.
-//  Copyright © 2017年 kris. All rights reserved.
-//
+ 
 
 #import <Foundation/Foundation.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSUInteger, RBDevelopEnv) {
-    RBDevelopEnv_Relese = 0,// 发布环境
-    RBDevelopEnv_Dedug,// 开发环境
-    RBDevelopEnv_Alpha,// 测试环境
+typedef NS_ENUM(NSUInteger, STPEnv) {
+    Env_Online = 0,// 发布环境
+    Env_Test,// 测试环境
 };
 
 
@@ -28,7 +21,7 @@ typedef NS_ENUM(NSUInteger, RBDevelopEnv) {
 /**
  开发环境   分为开发和发布环境
  */
-@property(nonatomic,assign) RBDevelopEnv developEnv;
+@property(nonatomic,assign) STPEnv developEnv;
 
 /**
    登录用户的id

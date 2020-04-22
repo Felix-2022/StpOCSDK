@@ -16,6 +16,7 @@
 #import <SpeakPen/STPPicBookResourceModel.h>
 #import <SpeakPen/STPStudyReportApi.h>
 #import <SpeakPen/STPStudyReportModel.h>
+
 #import <YYModel.h>
 
 @interface STPViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -38,7 +39,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
-    STPAccessConfiger.developEnv = RBDevelopEnv_Alpha;
+    STPAccessConfiger.developEnv = Env_Test;
  
         [STPAuthApi login:@"18112632108" passWord:@"23456789" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
             NSString *tips = @"登录成功";
