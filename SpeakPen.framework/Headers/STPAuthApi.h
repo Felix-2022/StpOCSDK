@@ -55,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param passWord 用户密码
  
  */
-+ (void)login:(NSString*_Nonnull)phoneNum passWord:(NSString*_Nonnull)passWord completionBlock:(nullable void (^)(STPUserModel *user,NSError *error)) completionBlock;
++ (void)login:(NSString*_Nonnull)phoneNum passWord:(NSString*_Nonnull)passWord pushToken:(NSString*)token completionBlock:(nullable void (^)(STPUserModel *user,NSError *error)) completionBlock;
 
 /**
  第三方登录

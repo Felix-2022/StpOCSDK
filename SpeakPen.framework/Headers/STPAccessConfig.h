@@ -41,6 +41,7 @@ typedef NS_ENUM(NSUInteger, STPEnv) {
  */
 @property(nonatomic,strong,nonnull) NSString *currDeviceID;
 
+@property(nonatomic,strong,nonnull) NSString *packageId;
 
 /**
  获取配置类

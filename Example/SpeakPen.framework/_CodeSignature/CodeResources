@@ -6,11 +6,11 @@
 	<dict>
 		<key>Headers/STPAccessConfig.h</key>
 		<data>
-		tnBlRiREVINnbwqU1VXzeRGAPGI=
+		j8jl0cIlV7R3hgeMbVUsz06ZOfQ=
 		</data>
 		<key>Headers/STPAuthApi.h</key>
 		<data>
-		jn44PJVee52Vomjg2bmqp/X0Cp4=
+		CFHuPhWMnbp6ZGkIOw2nB42GvlQ=
 		</data>
 		<key>Headers/STPDeviceApi.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/STPDeviceModel.h</key>
 		<data>
-		U3Ag/V+vc0lW84k6/56XNP6FVWM=
+		W64tzn8Qmd2Mfg8PDwIRV4btM+4=
 		</data>
 		<key>Headers/STPPicBookResourceModel.h</key>
 		<data>
@@ -59,22 +59,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tnBlRiREVINnbwqU1VXzeRGAPGI=
+			j8jl0cIlV7R3hgeMbVUsz06ZOfQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			LYn1f2jnWtcD1Ppr32Ar3CqrNZRhnmMf3ohrppqs63U=
+			FWcvhX7On3FDckGDHwI1BfoR4qkScFRtz1eBsCW9ACo=
 			</data>
 		</dict>
 		<key>Headers/STPAuthApi.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jn44PJVee52Vomjg2bmqp/X0Cp4=
+			CFHuPhWMnbp6ZGkIOw2nB42GvlQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			wxYDudYhXf24ZJywvc2jx5i+Y4xFpscl58tB3YTTAa4=
+			FmL1TNQKt4dgSqFiYLf6PxgIkYWmn/Prc/wUzKW6gLs=
 			</data>
 		</dict>
 		<key>Headers/STPDeviceApi.h</key>
@@ -92,11 +92,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			U3Ag/V+vc0lW84k6/56XNP6FVWM=
+			W64tzn8Qmd2Mfg8PDwIRV4btM+4=
 			</data>
 			<key>hash2</key>
 			<data>
-			hsVy4iLxLRybdHaeWLul5/ZycyNbyoIUsR15t0WuARs=
+			FsY/xIEiik2VcJz8nCTsJUzjb1Cf/x4Mccb8ueu7gcM=
 			</data>
 		</dict>
 		<key>Headers/STPPicBookResourceModel.h</key>

@@ -45,7 +45,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) BOOL power;//是否在充电中
 @property (nonatomic,assign) BOOL power_supply;// 是否连接电源
 @property (nonatomic,strong) NSString *device_type;// 设备类型
-@property (nonatomic,strong) STPDevicesDetail *detail;//当前控制设备的详情
+//@property (nonatomic,strong) STPDevicesDetail *detail;//当前控制设备的详情
+@property (nonatomic,assign) NSInteger volume;// 设备类型
+@property (nonatomic,strong) NSString *appId;
 @end
 
 @interface STPHardwareModel : NSObject
