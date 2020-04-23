@@ -23,7 +23,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		DC6114A2244C4039006F2A7F /* SpeakPen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6114A1244C4039006F2A7F /* SpeakPen.framework */; };
+		DC47A966245139A60009126A /* SpeakPen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC47A965245139A60009126A /* SpeakPen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB1B28C6AA319B33A723A7F1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B8B93D7C0F994D0B6298A5E9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		DC6114A1244C4039006F2A7F /* SpeakPen.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpeakPen.framework; sourceTree = "<group>"; };
+		DC47A965245139A60009126A /* SpeakPen.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeakPen.framework; path = ../SpeakPen.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				DC6114A2244C4039006F2A7F /* SpeakPen.framework in Frameworks */,
+				DC47A966245139A60009126A /* SpeakPen.framework in Frameworks */,
 				29D9930A48DD67166191180C /* Pods_StpOCSDK_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,7 +96,7 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
-				DC6114A1244C4039006F2A7F /* SpeakPen.framework */,
+				DC47A965245139A60009126A /* SpeakPen.framework */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for StpOCSDK */,
 				6003F5B5195388D20070C39A /* Tests */,

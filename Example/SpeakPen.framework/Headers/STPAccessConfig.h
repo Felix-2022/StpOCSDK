@@ -6,8 +6,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, STPEnv) {
-    Env_Online = 0,// 发布环境
-    Env_Test,// 测试环境
+    Env_Distribution = 0,// 发布环境
+    Env_Development,// 测试环境
 };
 
 
@@ -22,7 +22,10 @@ typedef NS_ENUM(NSUInteger, STPEnv) {
  开发环境   分为开发和发布环境
  */
 @property(nonatomic,assign) STPEnv developEnv;
-
+/**
+   产品Id
+ */
+@property(nonatomic,strong,nonnull) NSString* appID;
 /**
    登录用户的id
  */

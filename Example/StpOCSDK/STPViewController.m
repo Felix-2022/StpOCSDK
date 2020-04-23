@@ -16,7 +16,6 @@
 #import <SpeakPen/STPPicBookResourceModel.h>
 #import <SpeakPen/STPStudyReportApi.h>
 #import <SpeakPen/STPStudyReportModel.h>
-
 #import <YYModel.h>
 
 @interface STPViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -32,14 +31,13 @@
     [super viewDidLoad];
     self.title = @"speakPen 演示demo";
     [self setupFunctionItem];
-       
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
-    STPAccessConfiger.developEnv = Env_Test;
+     STPAccessConfiger.developEnv = Env_Development;
  
         [STPAuthApi login:@"18112632108" passWord:@"23456789" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
             NSString *tips = @"登录成功";
