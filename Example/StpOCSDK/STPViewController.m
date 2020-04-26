@@ -37,10 +37,11 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
-     STPAccessConfiger.developEnv = Env_Development;
+    STPAccessConfiger.developEnv = Env_Development;
+    [STPAccessConfiger setPackageId:@"aie.app" ];
     
  
-    [STPAuthApi login:@"18112632108" passWord:@"23456789" pushToken:@"" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
+    [STPAuthApi login:@"13552966915" passWord:@"111111" pushToken:@"" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
             NSString *tips = @"登录成功";
             NSString *message = @"点击下面列表测试";
             if (error) {

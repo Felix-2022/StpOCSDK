@@ -55,6 +55,7 @@ typedef NS_ENUM(NSUInteger, STPEnv) {
  清空资源配置文件
  */
 +(void)clearLoginUserData;
+-(void)setPackageId:(NSString * _Nonnull)packageId;
 
 @end
 

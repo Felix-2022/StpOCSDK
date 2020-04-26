@@ -243,7 +243,7 @@
 				ORGANIZATIONNAME = "aie-felix";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = N843SH92UV;
+						DevelopmentTeam = 8CU237CR3Q;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -500,7 +500,7 @@
 			baseConfigurationReference = 74868510C63592E4A7BAC7E6 /* Pods-StpOCSDK_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N843SH92UV;
+				DEVELOPMENT_TEAM = 8CU237CR3Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -510,7 +510,7 @@
 				INFOPLIST_FILE = "StpOCSDK/StpOCSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bos.StpOCSDK-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
@@ -522,7 +522,7 @@
 			baseConfigurationReference = 4E422422695AA1B079B26AB7 /* Pods-StpOCSDK_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N843SH92UV;
+				DEVELOPMENT_TEAM = 8CU237CR3Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -532,7 +532,7 @@
 				INFOPLIST_FILE = "StpOCSDK/StpOCSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bos.StpOCSDK-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
