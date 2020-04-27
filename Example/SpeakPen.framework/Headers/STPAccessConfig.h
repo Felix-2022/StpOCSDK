@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, STPEnv) {
 /**
    产品Id
  */
-@property(nonatomic,strong,nonnull) NSString* appID;
+@property(nonatomic,strong,nonnull,readonly) NSString* appID;
 /**
    登录用户的id
  */
@@ -39,9 +39,9 @@ typedef NS_ENUM(NSUInteger, STPEnv) {
 /**
   当前连接的设备ID 当切换控制设备时 需要更改currDeviceID值
  */
-@property(nonatomic,strong,nonnull) NSString *currDeviceID;
+@property(nonatomic,strong,nonnull,readonly) NSString *currDeviceID;
 
-@property(nonatomic,strong,nonnull) NSString *packageId;
+@property(nonatomic,strong,nonnull,readonly) NSString *packageId;
 
 /**
  获取配置类
@@ -54,9 +54,9 @@ typedef NS_ENUM(NSUInteger, STPEnv) {
 /**
  清空资源配置文件
  */
-+(void)clearLoginUserData;
+-(void)clearLoginUserData;
 -(void)setPackageId:(NSString * _Nonnull)packageId;
-
+-(void)setCurrDeviceID:(NSString * _Nonnull)currDeviceID  appId:(NSString *_Nonnull) appId;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -46,10 +46,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)updateUserName:(NSString *_Nonnull)name completionBlock:(nullable void (^)(BOOL isSucceed,NSError * _Nullable error)) completionBlock;
 
-/**
- 退出登录
- */
-+ (void)logOut:(nullable void (^)(BOOL isSucceed,NSError * _Nullable error)) completionBlock;
-
+ 
 @end
 NS_ASSUME_NONNULL_END

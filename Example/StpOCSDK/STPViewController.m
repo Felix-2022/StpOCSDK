@@ -49,7 +49,7 @@
                 message = error.description;
             } else {
                 if (user.devices.count > 0) {
-                   STPAccessConfiger.currDeviceID = [[user.devices firstObject] deviceID];
+                    [STPAccessConfiger setCurrDeviceID:[[user.devices firstObject] deviceID] appId:[[user.devices firstObject] appId]   ];
 //                    STPAccessConfiger.currDeviceID = @"4000104300000852";
 
                 }
