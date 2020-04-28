@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'StpOCSDK'
-  s.version          = '0.1.7'
+  s.version          = '0.1.8'
   s.summary          = 'StpOCSDK'
 
 # This description is used to generate tags and improve search results.
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/aie-felix/StpOcSDK'
+  s.homepage         = 'https://github.com/Felix-2022/StpOCSDK'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'aie-felix' => '@aiedevice.com' }
-  s.source           = { :git => 'https://github.com/aie-felix/StpOCSDK.git', :tag => s.version.to_s }
+  s.author           = { 'Felix' => '252141465@qq.com' }
+  s.source           = { :git => 'https://github.com/Felix-2022/StpOCSDK.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
