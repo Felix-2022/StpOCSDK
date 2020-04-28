@@ -1,10 +1,4 @@
-//
-//  STPAppDelegate.m
-//  StpOCSDK
-//
-//  Created by aie-felix on 04/10/2020.
-//  Copyright (c) 2020 aie-felix. All rights reserved.
-//
+
 
 #import "STPAppDelegate.h"
 
