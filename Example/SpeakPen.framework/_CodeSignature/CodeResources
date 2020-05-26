@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/STPAuthApi.h</key>
 		<data>
-		CFHuPhWMnbp6ZGkIOw2nB42GvlQ=
+		SC+geWMj0YvS5T1v+XvfnWr4BuQ=
 		</data>
 		<key>Headers/STPDeviceApi.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Rnrq0Sqh/AngdJ/sqaNSZ8co7H4=
+		dSTvaiwEzdF4BJaujfTdekr5/5Y=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,11 +70,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CFHuPhWMnbp6ZGkIOw2nB42GvlQ=
+			SC+geWMj0YvS5T1v+XvfnWr4BuQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			FmL1TNQKt4dgSqFiYLf6PxgIkYWmn/Prc/wUzKW6gLs=
+			fsIcsPmnkdc+vBml+EIIZAyjpmAU0C6folzBtToBNhA=
 			</data>
 		</dict>
 		<key>Headers/STPDeviceApi.h</key>
