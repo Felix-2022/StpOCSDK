@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface STPBindInfo : NSObject //修改网络或者绑定设备时的结果
+@property (nonatomic,strong) NSString *appId; //
 @property (nonatomic,strong) NSString *deviceID; // 设备ID
 @property (nonatomic,strong) NSString * result; //联网结果（success-成功；failure-失败）注意success 只代表网络连接成功 并不代表当前绑定设备成功
 @property (nonatomic,assign) BOOL isFirstBinded; //是否第一次绑定
