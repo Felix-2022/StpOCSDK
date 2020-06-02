@@ -41,9 +41,11 @@
             message = error.description;
         } else {
             if (user.devices.count > 0) {
-                [STPAccessConfiger setCurrDeviceID:[[user.devices firstObject] deviceID] appId:[[user.devices firstObject] appId]   ];
-                //                    STPAccessConfiger.currDeviceID = @"4000104300000852";
-                
+                NSString* deviceId =[[user.devices firstObject] deviceID];
+                NSString* appId =[[user.devices firstObject] appId] ;
+                NSLog(@"deviceId:%@,appId:%@",deviceId,appId);
+
+                [STPAccessConfiger setCurrDeviceID:deviceId appId:appId   ];
             }
         }
         self.alertVc = [UIAlertController alertControllerWithTitle:tips message:message preferredStyle:UIAlertControllerStyleAlert];

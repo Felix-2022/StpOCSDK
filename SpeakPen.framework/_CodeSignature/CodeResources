@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/STPDeviceModel.h</key>
 		<data>
-		/r5wM1PzMKQfC9UiNopQhiIyXUI=
+		QlYyfFTTMBRXtQ6X/QJcsPz23HU=
 		</data>
 		<key>Headers/STPPicBookResourceModel.h</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/STPUserModel.h</key>
 		<data>
-		CLNHluL3Nr+PoabqbcBTTUtG7mU=
+		brsfrX3gyZkIaKVGeU4PLUm8dYk=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -92,11 +92,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/r5wM1PzMKQfC9UiNopQhiIyXUI=
+			QlYyfFTTMBRXtQ6X/QJcsPz23HU=
 			</data>
 			<key>hash2</key>
 			<data>
-			epbqF9fhQGSn4SSY5sqNtJE6Eg6X2CIYjYyjgvr++O8=
+			B+DBgOZs2+Ii2VWtOk4xKoAifIdygcda5IUzrS1uvYk=
 			</data>
 		</dict>
 		<key>Headers/STPPicBookResourceModel.h</key>
@@ -158,11 +158,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CLNHluL3Nr+PoabqbcBTTUtG7mU=
+			brsfrX3gyZkIaKVGeU4PLUm8dYk=
 			</data>
 			<key>hash2</key>
 			<data>
-			efcwgW9jdGcWyDChQ0T72JSXkq9WAzEDdajKgl3mgy8=
+			dKFzjSm5daGYafWGKmlz9OR+RyGPQvsjcKULbHrrmzo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
