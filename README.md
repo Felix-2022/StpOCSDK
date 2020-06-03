@@ -42,7 +42,6 @@ pod 'StpOCSDK'
 ```ruby
 @interface STPAccessConfig
 
-#define STPAccessConfiger [STPAccessConfig defaultConfig]
 设置开发环境
 STPAccessConfiger.developEnv = Env_Development;
 [STPAccessConfiger setPackageId:@"输入分配给您的PackageId"];
@@ -104,5 +103,10 @@ STPAccessConfiger.developEnv = Env_Development;
 . 蓝牙配网Demo
 
 ```ruby
-参见blueTooth 工程
+参见blueTooth Demo
+https://github.com/Felix-2022/StpDemo
 ```
+
+### 全部SDK接口使用Demo
+https://github.com/Felix-2022/StpOCSDK/blob/master/Example/StpOCSDK/STPViewController.m
+
