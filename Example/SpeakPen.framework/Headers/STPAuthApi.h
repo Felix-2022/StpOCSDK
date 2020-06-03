@@ -94,7 +94,17 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)resetPassword:(NSString *_Nonnull)password phoneNum:(NSString*_Nonnull) phoneNum  code :(NSString *_Nonnull)code  completionBlock:(nullable void (^)(BOOL isSuccess,NSError *error)) completionBlock;
 
 
+/**
+  登出
+ */
 + (void)logOut:(void (^)(BOOL isSuccess,NSError *error))  block;
+
+/**
+   更新用户推送的token
+ @param pushId 个推Cid
+ @param completionBlock result
+ */
++ (void)updateUserPushToken:(NSString *_Nonnull)pushId completionBlock:(void (^)(BOOL  isSuccess,NSError *error)) completionBlock;
 
 @end
 NS_ASSUME_NONNULL_END

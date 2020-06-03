@@ -20,23 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSString * bindtel; //当前设备已经被绑定时回返回管理员的手机号码
 @end
 
-@interface STPDevicesDetail : NSObject<NSCoding>
-@property (nonatomic,strong) NSString *deviceID; // 设备ID
-@property (nonatomic,strong) NSString *name;// 设备的名称
-@property (nonatomic,assign) BOOL online;// 是否连接网络
-@property (nonatomic,strong) NSString* device_type;//设备类型
-@property (nonatomic,assign) NSInteger volume;//音量大小
-@property (nonatomic,assign) BOOL power;//是否在充电中
-@property (nonatomic,assign) BOOL power_supply;//是否连接电源
-@property (nonatomic,assign) NSInteger battery;//设备当前电量
-@property (nonatomic,strong) NSString*wifissid;
-@property (nonatomic,strong) NSString*index_config;
-@property (nonatomic,strong) NSArray <STPDeviceUser*>*users;//绑定当前的设备的用户组
-@property (nonatomic,assign) BOOL isEarLightOn;
-@property (nonatomic,assign) BOOL isChildLockOn;
-@property (nonatomic,strong) NSString* appId; 
-@end
-
 @interface STPDeviceModel : NSObject<NSCoding>
 @property (nonatomic,strong) NSString *deviceID;//  设备ID
 @property (nonatomic,assign) float battery;//设备当前电量
@@ -46,7 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) BOOL power;//是否在充电中
 @property (nonatomic,assign) BOOL power_supply;// 是否连接电源
 @property (nonatomic,strong) NSString *device_type;// 设备类型
-//@property (nonatomic,strong) STPDevicesDetail *detail;//当前控制设备的详情
 @property (nonatomic,assign) NSInteger volume;// 设备类型
 @property (nonatomic,strong) NSString *appId;
 @end

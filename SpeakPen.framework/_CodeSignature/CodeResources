@@ -10,15 +10,15 @@
 		</data>
 		<key>Headers/STPAuthApi.h</key>
 		<data>
-		SC+geWMj0YvS5T1v+XvfnWr4BuQ=
+		tvYZ8rxH3qKKjITQ/2sl9bfdFS8=
 		</data>
 		<key>Headers/STPDeviceApi.h</key>
 		<data>
-		kQu3i8v/UNgi/IFMbLG7bNuOaJM=
+		Cgk6NurLmLnWapLS+XC/j7QggKs=
 		</data>
 		<key>Headers/STPDeviceModel.h</key>
 		<data>
-		QlYyfFTTMBRXtQ6X/QJcsPz23HU=
+		t02p/GbVmjV4YeN2Q9mS2lSt4Gc=
 		</data>
 		<key>Headers/STPPicBookResourceModel.h</key>
 		<data>
@@ -36,13 +36,9 @@
 		<data>
 		aGHvbHG0ZAjJ/ueesycHpU7JXGg=
 		</data>
-		<key>Headers/STPUserApi.h</key>
-		<data>
-		NnYUoOUm+bihq9LIJdJgRaDIE2w=
-		</data>
 		<key>Headers/STPUserModel.h</key>
 		<data>
-		brsfrX3gyZkIaKVGeU4PLUm8dYk=
+		J65aeNu9BiMN4I9H7IPHOE55CiA=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -70,33 +66,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SC+geWMj0YvS5T1v+XvfnWr4BuQ=
+			tvYZ8rxH3qKKjITQ/2sl9bfdFS8=
 			</data>
 			<key>hash2</key>
 			<data>
-			fsIcsPmnkdc+vBml+EIIZAyjpmAU0C6folzBtToBNhA=
+			LiOsAx1K6p0q5jb55jpdYW5LbA13h8YTycZciPTFt0w=
 			</data>
 		</dict>
 		<key>Headers/STPDeviceApi.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kQu3i8v/UNgi/IFMbLG7bNuOaJM=
+			Cgk6NurLmLnWapLS+XC/j7QggKs=
 			</data>
 			<key>hash2</key>
 			<data>
-			aMlabLYln+9DDN5BzikB8NggazX8GZzwMNerA/5+V5o=
+			1URKjyVASnSSVPIovQwBNIoZRYEiwyvf43N0PiknzJk=
 			</data>
 		</dict>
 		<key>Headers/STPDeviceModel.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QlYyfFTTMBRXtQ6X/QJcsPz23HU=
+			t02p/GbVmjV4YeN2Q9mS2lSt4Gc=
 			</data>
 			<key>hash2</key>
 			<data>
-			B+DBgOZs2+Ii2VWtOk4xKoAifIdygcda5IUzrS1uvYk=
+			ucdSMOmqjIdWnJRQdF1qNc7bJ+ZTftYfFsAEnZuNorI=
 			</data>
 		</dict>
 		<key>Headers/STPPicBookResourceModel.h</key>
@@ -143,26 +139,15 @@
 			d2R4SADy+HtlI+ZAETMXSTTikT9Vx/cvff7pFkhdxH4=
 			</data>
 		</dict>
-		<key>Headers/STPUserApi.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			NnYUoOUm+bihq9LIJdJgRaDIE2w=
-			</data>
-			<key>hash2</key>
-			<data>
-			V8vQD7lFkGN5XWMw6tSHHGstCYHEj+Xw4s9sn0wnwKA=
-			</data>
-		</dict>
 		<key>Headers/STPUserModel.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			brsfrX3gyZkIaKVGeU4PLUm8dYk=
+			J65aeNu9BiMN4I9H7IPHOE55CiA=
 			</data>
 			<key>hash2</key>
 			<data>
-			dKFzjSm5daGYafWGKmlz9OR+RyGPQvsjcKULbHrrmzo=
+			yugh3VApmYdHkWo5nVGVFEdIOMo2bStH7glI15zNk7c=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

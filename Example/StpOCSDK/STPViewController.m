@@ -4,7 +4,6 @@
 #import <SpeakPen/STPAuthApi.h>
 #import <SpeakPen/STPDeviceApi.h>
 #import <SpeakPen/STPAccessConfig.h>
-#import <SpeakPen/STPUserApi.h>
 #import <SpeakPen/STPPictureBookApi.h>
 #import <SpeakPen/STPPicBookResourceModel.h>
 #import <SpeakPen/STPStudyReportApi.h>
@@ -30,9 +29,10 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
-    STPAccessConfiger.developEnv = Env_Development;
-    [STPAccessConfiger setPackageId:@"stp.sdk" ];
- 
+    STPAccessConfiger.developEnv = Env_Development;//开发环境
+//    STPAccessConfiger.developEnv = Env_Distribution;//生产环境
+    [STPAccessConfiger setPackageId:@"aie.app" ];
+    
     [STPAuthApi login:@"13552966915" passWord:@"111111" pushId:@"" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
         NSString *tips = @"登录成功";
         NSString *message = @"点击下面列表测试";
@@ -44,7 +44,7 @@
                 NSString* deviceId =[[user.devices firstObject] deviceID];
                 NSString* appId =[[user.devices firstObject] appId] ;
                 NSLog(@"deviceId:%@,appId:%@",deviceId,appId);
-
+                
                 [STPAccessConfiger setCurrDeviceID:deviceId appId:appId   ];
             }
         }
@@ -68,23 +68,20 @@
         @"获取当前用户的设备",
         @"获取设备硬件信息",
         @"获取设备的详细信息",
-        @"关闭设备",
         @"修改设备的名称",
         @"修改设备音量",
-        @"设备重启",
-        @"修改用户名称",
-        @"获取绘本资源列表",
-        @"搜索绘本资源列表",
+        @"获取绘本列表",
+        @"搜索绘本列表",
         @"获取绘本详情",
         @"上传绘本",
         @"删除绘本",
         @"获取设备端绘本列表",
         @"获取设备端存储卡容量信息",
-        @"获取学习成就数据 （按照日期进行选择）",
-        @"获取学习成就数据 （按照数量进行选择）",
-        @"获取学习成就详情数据 （按照数量进行选择）",
-        @"获取跟读评测统计数据 （按照日期进行选择）",
-        @"获取跟读评测统计数据 （按照数量进行选择）"
+        @"获取学习成就 （按照日期进行选择）",
+        @"获取学习成就 （按照数量进行选择）",
+        @"获取学习成就详情 （按照数量进行选择）",
+        @"获取跟读评测统计 （按照日期进行选择）",
+        @"获取跟读评测统计 （按照数量进行选择）"
     ];
 }
 
@@ -117,7 +114,6 @@
     switch (indexPath.row) {
         case 0:
         {
-            //获取当前用户的所有设备
             [STPDeviceApi getDeviceList:YES block:^(NSArray<STPDeviceModel *> * _Nonnull device, NSError * _Nonnull error) {
                 NSLog(@"--获取设备列表-%@-----%@",device,error);
                 if (error) {
@@ -131,7 +127,6 @@
             break;
         case 1:
         {
-            //获取当前用户的所有设备
             [STPDeviceApi getHardwareInfo:^(STPHardwareModel *deviceDict, NSError * _Nonnull error) {
                 NSLog(@"获取设备硬件信息: %@---%@",deviceDict,error);
                 if (error) {
@@ -145,7 +140,7 @@
             break;
         case 2:
         {
-            [STPDeviceApi getDeviceDetail:^(STPDevicesDetail * _Nonnull detail, NSError * _Nonnull error) {
+            [STPDeviceApi getDeviceDetail:^(STPDeviceModel* _Nonnull detail, NSError * _Nonnull error) {
                 NSLog(@"获取设备详情: %@---%@",detail,error);
                 if (error) {
                     message = error.description;
@@ -158,8 +153,8 @@
             break;
         case 3:
         {
-            //关闭设备
-            [STPDeviceApi shutdownDevice:^(BOOL isSuccess, NSError * _Nonnull error) {
+            [STPDeviceApi updateDeviceName:@"点读笔1" block:^(BOOL isSuccess, NSError * _Nonnull error) {
+                NSLog(@"修改设备名称: %d---%@",isSuccess,error);
                 if (error) {
                     message = error.description;
                 } else {
@@ -171,8 +166,8 @@
             break;
         case 4:
         {
-            // 修改设备名称
-            [STPDeviceApi updateDeviceName:@"点读笔1" block:^(BOOL isSuccess, NSError * _Nonnull error) {
+            [STPDeviceApi changeDeviceVolume:50 block:^(BOOL isSuccess, NSError * _Nonnull error) {
+                NSLog(@"修改设备音量:%d-------%@",isSuccess,error);
                 if (error) {
                     message = error.description;
                 } else {
@@ -184,13 +179,12 @@
             break;
         case 5:
         {
-            // 修改设备音量
-            [STPDeviceApi changeDeviceVolume:50 block:^(BOOL isSuccess, NSError * _Nonnull error) {
-                NSLog(@"-修改设备音量----%d-------%@",isSuccess,error);
+            [STPPictureBookApi getAllPicbookList:0 count:20 block:^(STPPicBookResourceList * _Nullable list, NSError * _Nullable error) {
+                NSLog(@"获取绘本列表:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [NSString stringWithFormat:@"是否成功 isSuccess ： %d",isSuccess];
+                    message = [list yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
@@ -198,11 +192,12 @@
             break;
         case 6:
         {
-            [STPDeviceApi restartDevice:^(BOOL isSuccess, NSError * _Nonnull error) {
+            [STPPictureBookApi searchPicbookList:@"英" block:^(STPPicBookResourceList * _Nullable list, NSError * _Nullable error) {
+                NSLog(@"搜索绘本列表:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [NSString stringWithFormat:@"是否成功 isSuccess ： %d",isSuccess];
+                    message = [list yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
@@ -210,43 +205,8 @@
             break;
         case 7:
         {
-            [STPUserApi updateUserName:@"我是新用户" completionBlock:^(BOOL isSucceed, NSError * _Nullable error) {
-                if (error) {
-                    message = error.description;
-                } else {
-                    message = [NSString stringWithFormat:@"是否成功 isSuccess ： %d",isSucceed];
-                }
-                [self showMessage:message];
-            }];
-        }
-            break;
-        case 8:
-        {
-            [STPPictureBookApi getAllPicbookList:0 count:20 block:^(STPPicBookResourceList * _Nullable list, NSError * _Nullable error) {
-                if (error) {
-                    message = error.description;
-                } else {
-                    message = [list yy_modelToJSONString];
-                }
-                [self showMessage:message];
-            }];
-        }
-            break;
-        case 9:
-        {
-            [STPPictureBookApi searchPicbookList:@"妈妈" block:^(STPPicBookResourceList * _Nullable list, NSError * _Nullable error) {
-                if (error) {
-                    message = error.description;
-                } else {
-                    message = [list yy_modelToJSONString];
-                }
-                [self showMessage:message];
-            }];
-        }
-            break;
-        case 10:
-        {
             [STPPictureBookApi getPicbookDetail:@"3562496" block:^(STPPicBookDetailModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取绘本详情:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
@@ -256,13 +216,53 @@
             }];
         }
             break;
-        case 11:
+        case 8:
         {
             [STPPictureBookApi uploadPicbook:@"2576772" block:^(BOOL isSuss, NSError * _Nullable error) {
+                NSLog(@"上传绘本:%d-------%@",isSuss,error);
                 if (error) {
                     message = error.description;
                 } else {
                     message = [NSString stringWithFormat:@"是否成功 isSuccess ： %d",isSuss];
+                }
+                [self showMessage:message];
+            }];
+        }
+            break;
+        case 9:
+        {
+            [STPPictureBookApi deletePicbook:@"2576772" block:^(BOOL isSuss, NSError * _Nullable error) {
+                NSLog(@"删除绘本:%d-------%@",isSuss,error);
+                if (error) {
+                    message = error.description;
+                } else {
+                    message = [NSString stringWithFormat:@"是否成功 isSuccess ： %d",isSuss];
+                }
+                [self showMessage:message];
+            }];
+        }
+            break;
+        case 10:
+        {
+            [STPPictureBookApi getLocalPicbookList:0 count:7 block:^(STPPicBookDetailList * _Nullable list, NSError * _Nullable error) {
+                NSLog(@"获取设备端绘本列表:%@",error);
+                if (error) {
+                    message = error.description;
+                } else {
+                    message = [list yy_modelToJSONString];
+                }
+                [self showMessage:message];
+            }];
+        }
+            break;
+        case 11:
+        {
+            [STPPictureBookApi getSdcardInfo:^(STPSdcardInfo * _Nullable cardInfo, NSError * _Nullable error) {
+                NSLog(@"获取设备端存储卡容量信息:%@",error);
+                if (error) {
+                    message = error.description;
+                } else {
+                    message = [cardInfo yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
@@ -270,11 +270,13 @@
             break;
         case 12:
         {
-            [STPPictureBookApi deletePicbook:@"2576772" block:^(BOOL isSuss, NSError * _Nullable error) {
+            
+            [STPStudyReportApi getStudyAchieveData:@"point-reading" startDate:@"2020-03-24" endDate:@"2020-03-31" block:^(STPStudyAchieveList * _Nullable list, NSError * _Nullable error) {
+                NSLog(@"获取学习成就 （按照日期进行选择）:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [NSString stringWithFormat:@"是否成功 isSuccess ： %d",isSuss];
+                    message = [list yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
@@ -282,7 +284,8 @@
             break;
         case 13:
         {
-            [STPPictureBookApi getLocalPicbookList:0 count:7 block:^(STPPicBookDetailList * _Nullable list, NSError * _Nullable error) {
+            [STPStudyReportApi getStudyAchieveData:@"point-reading" fromId:0 count:7 block:^(STPStudyAchieveList * _Nullable list, NSError * _Nullable error) {
+                NSLog(@"获取学习成就 （按照数量进行选择）:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
@@ -294,11 +297,14 @@
             break;
         case 14:
         {
-            [STPPictureBookApi getSdcardInfo:^(STPSdcardInfo * _Nullable cardInfo, NSError * _Nullable error) {
+            
+            [STPStudyReportApi getStudyAchieveDetailData:@"duration" fromId:0 count:7 block:^(STPStudyAchieveDetail * _Nullable list, NSError * _Nullable error) {
+                NSLog(@"获取学习成就详情 （按照数量进行选择）:%@",error);
+                
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [cardInfo yy_modelToJSONString];
+                    message = [list yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
@@ -306,7 +312,8 @@
             break;
         case 15:
         {
-            [STPStudyReportApi getStudyAchieveData:@"point-reading" startDate:@"2020-03-24" endDate:@"2020-03-31" block:^(STPStudyAchieveList * _Nullable list, NSError * _Nullable error) {
+            [STPStudyReportApi getFollowReadData:@"2020-03-24" endDate:@"2020-03-31" block:^(NSArray * _Nullable list, NSError * _Nullable error) {
+                NSLog(@"获取跟读评测统计 （按照日期进行选择）:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
@@ -318,43 +325,9 @@
             break;
         case 16:
         {
-            [STPStudyReportApi getStudyAchieveData:@"point-reading" fromId:0 count:7 block:^(STPStudyAchieveList * _Nullable list, NSError * _Nullable error) {
-                if (error) {
-                    message = error.description;
-                } else {
-                    message = [list yy_modelToJSONString];
-                }
-                [self showMessage:message];
-            }];
-        }
-            break;
-        case 17:
-        {
-            [STPStudyReportApi getStudyAchieveDetailData:@"duration" fromId:0 count:7 block:^(STPStudyAchieveDetail * _Nullable list, NSError * _Nullable error) {
-                if (error) {
-                    message = error.description;
-                } else {
-                    message = [list yy_modelToJSONString];
-                }
-                [self showMessage:message];
-            }];
-        }
-            break;
-        case 18:
-        {
-            [STPStudyReportApi getFollowReadData:@"2020-03-24" endDate:@"2020-03-31" block:^(NSArray * _Nullable list, NSError * _Nullable error) {
-                if (error) {
-                    message = error.description;
-                } else {
-                    message = [list yy_modelToJSONString];
-                }
-                [self showMessage:message];
-            }];
-        }
-            break;
-        case 19:
-        {
+            
             [STPStudyReportApi getFollowReadData:0 count:7 block:^(NSArray * _Nullable list, NSError * _Nullable error) {
+                NSLog(@"获取跟读评测统计 （按照数量进行选择）:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
