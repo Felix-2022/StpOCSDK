@@ -81,7 +81,8 @@
         @"获取学习成就 （按照数量进行选择）",
         @"获取学习成就详情 （按照数量进行选择）",
         @"获取跟读评测统计 （按照日期进行选择）",
-        @"获取跟读评测统计 （按照数量进行选择）"
+        @"获取跟读评测统计 （按照数量进行选择）",
+        @"手机号是否注册过"
     ];
 }
 
@@ -335,6 +336,17 @@
                 }
                 [self showMessage:message];
             }];
+        }
+            break;
+        case 17:{
+             [STPAuthApi isRegist:@"13552966911" completionBlock:^(NSNumber * _Nonnull isRegist, NSError * _Nonnull error) {
+                 if ([isRegist isEqualToNumber:@(1)]) {
+                      message =@"手机号码已注册";
+                    }else{
+                     message =@"手机号码未注册";
+                    }
+                   [self showMessage:message];
+                }];
         }
             break;
         default:
