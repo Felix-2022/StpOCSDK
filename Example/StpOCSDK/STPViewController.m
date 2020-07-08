@@ -272,7 +272,7 @@
         case 12:
         {
             
-            [STPStudyReportApi getStudyAchieveData:@"point-reading" startDate:@"2020-03-24" endDate:@"2020-03-31" block:^(STPStudyAchieveList * _Nullable list, NSError * _Nullable error) {
+            [STPStudyReportApi getStudyAchieveData:@"point-reading" startDate:@"2020-01-01" endDate:@"2020-03-31" block:^(STPStudyAchieveList * _Nullable list, NSError * _Nullable error) {
                 NSLog(@"获取学习成就 （按照日期进行选择）:%@",error);
                 if (error) {
                     message = error.description;
