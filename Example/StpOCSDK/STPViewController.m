@@ -339,7 +339,7 @@
         }
             break;
         case 17:{
-             [STPAuthApi isRegist:@"13552966911" completionBlock:^(NSNumber * _Nonnull isRegist, NSError * _Nonnull error) {
+             [STPAuthApi isRegist:@"13511111111" completionBlock:^(NSNumber * _Nonnull isRegist, NSError * _Nonnull error) {
                  if ([isRegist isEqualToNumber:@(1)]) {
                       message =@"手机号码已注册";
                     }else{
