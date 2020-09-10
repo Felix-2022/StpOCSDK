@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'StpOCSDK'
-  s.version          = '0.3.6'
+  s.version          = '0.3.7'
   s.summary          = 'StpOCSDK'
 
 # This description is used to generate tags and improve search results.
@@ -32,7 +32,10 @@ TODO: Add long description of the pod here.
   s.requires_arc = true
   s.libraries = 'c++'
   s.frameworks = 'UIKit','WebKit','CoreTelephony','SystemConfiguration','MobileCoreServices','AVFoundation'
-  s.dependency 'AFNetworking','~>3.2.0',:subspecs => ['Reachability', 'Serialization', 'Security', 'NSURLSession']
+  s.dependency 'AFNetworking/Reachability','~> 3.2.0'
+  s.dependency 'AFNetworking/Serialization','~> 3.2.0'
+  s.dependency 'AFNetworking/Security','~> 3.2.0'
+  s.dependency 'AFNetworking/NSURLSession','~> 3.2.0'
   s.dependency 'YYModel'
  #依赖自己的或别人的Framework文件
   s.vendored_frameworks = 'SpeakPen.framework'
