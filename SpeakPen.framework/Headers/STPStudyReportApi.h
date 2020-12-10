@@ -65,6 +65,15 @@ NS_ASSUME_NONNULL_BEGIN
                      count:(NSInteger)count
                      block:(nullable void (^)(NSArray* _Nullable list,NSError * _Nullable error))block;
 
+
+/// 大屏同步开关接口
+/// @param enable YES开 NO关
++ (void)handleSyncSwitch:(BOOL)enable
+                   block:(nullable void (^)(BOOL isSuss,NSError* _Nullable error))block;
+
+/// 发送大屏同步心跳接口
++ (void)sendSyncHeartbeatWithBlock:(nullable void (^)(BOOL isSuss,NSError* _Nullable error))block;
+
 @end
 
 NS_ASSUME_NONNULL_END
