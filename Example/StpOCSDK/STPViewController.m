@@ -33,7 +33,7 @@
 //    STPAccessConfiger.developEnv = Env_Distribution;//生产环境
     [STPAccessConfiger setPackageId:@"stp.sdk" ];
     
-    [STPAuthApi login:@"13552966915" passWord:@"111111" pushId:@"" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
+    [STPAuthApi login:@"17623251607" passWord:@"12345678" pushId:@"" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
         NSString *tips = @"登录成功";
         NSString *message = @"点击下面列表测试";
         if (error) {
@@ -77,12 +77,15 @@
         @"删除绘本",
         @"获取设备端绘本列表",
         @"获取设备端存储卡容量信息",
-        @"获取学习成就 （按照日期进行选择）",
-        @"获取学习成就 （按照数量进行选择）",
-        @"获取学习成就详情 （按照数量进行选择）",
-        @"获取跟读评测统计 （按照日期进行选择）",
-        @"获取跟读评测统计 （按照数量进行选择）",
-        @"手机号是否注册过"
+        @"当天跟读测评 ",
+        @"获取前几天跟读测评",
+        @"获取当天阅读详情 ",
+        @"获取前几天阅读详情",
+        @"获取过去几天的点读趋势详情",
+        @"获取过去几天的学习时长趋势详情",
+        @"手机号是否注册过",
+        @"获取已添加到设备上的点读包列表",
+        @" 获取全部可用的点读包列表"
     ];
 }
 
@@ -272,12 +275,12 @@
         case 12:
         {
             
-            [STPStudyReportApi getStudyAchieveData:@"point-reading" startDate:@"2020-01-01" endDate:@"2020-03-31" block:^(STPStudyAchieveList * _Nullable list, NSError * _Nullable error) {
-                NSLog(@"获取学习成就 （按照日期进行选择）:%@",error);
+            [STPStudyReportApi getTodayFollowReadingListWithType:@"follow-reading" andCallback:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取当天跟读测评 （今天）:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [list yy_modelToJSONString];
+                    message = [detailModel.data yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
@@ -285,12 +288,12 @@
             break;
         case 13:
         {
-            [STPStudyReportApi getStudyAchieveData:@"point-reading" fromId:0 count:7 block:^(STPStudyAchieveList * _Nullable list, NSError * _Nullable error) {
-                NSLog(@"获取学习成就 （按照数量进行选择）:%@",error);
+            [STPStudyReportApi getPassdayFollowReadingListWithType:@"follow-reading" andPassDay:7 andCallback:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取前几天跟读测评:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [list yy_modelToJSONString];
+                    message = [detailModel.data yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
@@ -299,13 +302,13 @@
         case 14:
         {
             
-            [STPStudyReportApi getStudyAchieveDetailData:@"duration" fromId:0 count:7 block:^(STPStudyAchieveDetail * _Nullable list, NSError * _Nullable error) {
-                NSLog(@"获取学习成就详情 （按照数量进行选择）:%@",error);
+            [STPStudyReportApi getTodayReadBookListCallback:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取当天阅读详情 （当天）:%@",error);
                 
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [list yy_modelToJSONString];
+                    message = [detailModel.data yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
@@ -313,12 +316,12 @@
             break;
         case 15:
         {
-            [STPStudyReportApi getFollowReadData:@"2020-03-24" endDate:@"2020-03-31" block:^(NSArray * _Nullable list, NSError * _Nullable error) {
-                NSLog(@"获取跟读评测统计 （按照日期进行选择）:%@",error);
+            [STPStudyReportApi getPassdayReadBookListWithPassDay:7 andCallback:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取前几天阅读详情 :%@",error);
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [list yy_modelToJSONString];
+                    message = [detailModel.data yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
@@ -326,19 +329,31 @@
             break;
         case 16:
         {
-            
-            [STPStudyReportApi getFollowReadData:0 count:7 block:^(NSArray * _Nullable list, NSError * _Nullable error) {
-                NSLog(@"获取跟读评测统计 （按照数量进行选择）:%@",error);
+            [STPStudyReportApi getPassdayTrendListWithType:@"point-reading" andPassDay:7 andCallback:^(STPTrendListModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取过去几天的点读详情:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
-                    message = [list yy_modelToJSONString];
+                    message = [detailModel.list yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
         }
             break;
-        case 17:{
+        case 17:
+        {
+            [STPStudyReportApi getPassdayTrendListWithType:@"duration" andPassDay:7 andCallback:^(STPTrendListModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取过去几天的读书时长 （按照数量进行选择）:%@",error);
+                if (error) {
+                    message = error.description;
+                } else {
+                    message = [detailModel.list yy_modelToJSONString];
+                }
+                [self showMessage:message];
+            }];
+        }
+            break;
+        case 18:{
              [STPAuthApi isRegist:@"13511111111" completionBlock:^(NSNumber * _Nonnull isRegist, NSError * _Nonnull error) {
                  if ([isRegist isEqualToNumber:@(1)]) {
                       message =@"手机号码已注册";
@@ -347,6 +362,28 @@
                     }
                    [self showMessage:message];
                 }];
+        }
+            break;
+        case 19:{
+            [STPPictureBookApi getLocalPackageList:0 count:20 block:^(STPPicBookDetailList * _Nullable list, NSError * _Nullable error) {
+                if (error) {
+                    message = error.description;
+                } else {
+                    message = [list yy_modelToJSONString];
+                }
+                [self showMessage:message];
+            }];
+        }
+            break;
+        case 20:{
+            [STPPictureBookApi getAllPackageList:@"english" resourceId:0 count:20 block:^(STPPicBookResourceList * _Nullable list, NSError * _Nullable error) {
+                if (error) {
+                    message = error.description;
+                } else {
+                    message = [list yy_modelToJSONString];
+                }
+                [self showMessage:message];
+            }];
         }
             break;
         default:

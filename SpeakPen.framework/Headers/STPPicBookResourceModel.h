@@ -4,7 +4,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// 绘本资源
+/// 绘本或者点读包资源（添加到设备之前）
 @interface STPPicBookResourceModel : NSObject
 
 @property(nonatomic,assign) NSInteger rID;//资源ID
@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) NSString *mid;// 设备id
 @property(nonatomic,assign) NSInteger size;
 @property(nonatomic,assign) NSInteger status;// 添加状态 0未添加 1已添加
+@property(nonatomic,assign) NSInteger downloadable;//是否可以下载 0否 1是
 @property(nonatomic,assign) NSInteger createdAt;//
 @property(nonatomic,assign) NSInteger updatedAt;//
 
@@ -26,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-/// 绘本详情
+/// 绘本或点读包详情（已经添加到设备）
 @interface STPPicBookDetailModel : NSObject
 
 @property(nonatomic,assign) NSInteger rID; //资源ID
