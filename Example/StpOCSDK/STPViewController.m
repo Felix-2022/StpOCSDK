@@ -12,7 +12,7 @@
 
 @interface STPViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
-
+@property (nonatomic, strong) NSString * picbookId;
 @property (nonatomic, strong) NSArray * dataArray;
 @property (nonatomic, strong) UIAlertController *alertVc;
 @end
@@ -188,6 +188,10 @@
                 if (error) {
                     message = error.description;
                 } else {
+                    if (list.lists.count > 0) {
+                        STPPicBookResourceModel *model = [list.lists firstObject];
+                        self.picbookId = model.mid;
+                    }
                     message = [list yy_modelToJSONString];
                 }
                 [self showMessage:message];
@@ -209,7 +213,11 @@
             break;
         case 7:
         {
-            [STPPictureBookApi getPicbookDetail:@"3562496" block:^(STPPicBookDetailModel * _Nullable detailModel, NSError * _Nullable error) {
+            NSString *rID = @"3562496";
+            if (self.picbookId.length > 0) {
+                rID = self.picbookId;
+            }
+            [STPPictureBookApi getPicbookDetail:rID block:^(STPPicBookDetailModel * _Nullable detailModel, NSError * _Nullable error) {
                 NSLog(@"获取绘本详情:%@",error);
                 if (error) {
                     message = error.description;
@@ -222,8 +230,12 @@
             break;
         case 8:
         {
-            [STPPictureBookApi uploadPicbook:@"2576772" block:^(BOOL isSuss, NSError * _Nullable error) {
-                NSLog(@"上传绘本:%d-------%@",isSuss,error);
+            NSString *rID = @"3562496";
+            if (self.picbookId.length > 0) {
+                rID = self.picbookId;
+            }
+            [STPPictureBookApi addBookDownloadToDevice:rID block:^(BOOL isSuss, NSError * _Nullable error) {
+                NSLog(@"添加绘本:%d-------%@",isSuss,error);
                 if (error) {
                     message = error.description;
                 } else {
@@ -235,7 +247,11 @@
             break;
         case 9:
         {
-            [STPPictureBookApi deletePicbook:@"2576772" block:^(BOOL isSuss, NSError * _Nullable error) {
+            NSString *rID = @"3562496";
+            if (self.picbookId.length > 0) {
+                rID = self.picbookId;
+            }
+            [STPPictureBookApi deleteDeviceBooks:[NSArray arrayWithObject:rID] block:^(BOOL isSuss, NSError * _Nullable error) {
                 NSLog(@"删除绘本:%d-------%@",isSuss,error);
                 if (error) {
                     message = error.description;
