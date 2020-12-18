@@ -23,16 +23,16 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param picBookId 绘本ID
 + (void )getPicbookDetail:(NSString *)picBookId block:(nullable void (^)(STPPicBookDetailModel * _Nullable detailModel,NSError * _Nullable error))block;
 
-/// 上传绘本
+/// 下载绘本或点读包
 /// @param picBookId 绘本ID
-+ (void )uploadPicbook:(NSString *)picBookId block:(nullable void (^)(BOOL isSuss,NSError * _Nullable error))block;
++ (void )addBookDownloadToDevice:(NSString *)picBookId block:(nullable void (^)(BOOL isSuss,NSError * _Nullable error))block;
 
-/// 删除绘本
-/// @param picBookId 绘本ID
-+ (void )deletePicbook:(NSString *)picBookId block:(nullable void (^)(BOOL isSuss,NSError * _Nullable error))block;
+/// 删除绘本（单本、批量）
+/// @param aIDs 绘本ID
++ (void )deleteDeviceBooks:(NSArray *)aIDs block:(nullable void (^)(BOOL isSuss,NSError * _Nullable error))block;
 
 /**
- 获取设备端绘本列表
+ 获取设备已添加绘本列表
  @param resourceID  最后一条绘本ID，0表示获取首页（必选）
  @param count 每页返回的数量，可选范围1-50，建议值20 （必选）
  */
