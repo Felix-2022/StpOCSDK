@@ -10,7 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - FollowRead Model
 
-/// 跟读资源数据
+/// 跟读STPStudyReportModel
 @interface STPFollowReadMediaInfoModel : NSObject<NSCopying>
 
 @property(nonatomic,copy) NSString *book_id;

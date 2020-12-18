@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/STPAuthApi.h</key>
 		<data>
-		Ikw3TuLMrowRqSPlI31PIUoOLhI=
+		RDVyfB2APYUWZMSaqhQ5lJIKlBU=
 		</data>
 		<key>Headers/STPDeviceApi.h</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Headers/STPStudyReportApi.h</key>
 		<data>
-		qB08GlA/2C9Zq3CXzQVkCibwJzQ=
+		QnOI2umfgSv8kFRQ5l04i5+hbyo=
 		</data>
 		<key>Headers/STPStudyReportModel.h</key>
 		<data>
-		B7dX4SzMAG0kthX6gWxw+jNaUL0=
+		TWKFfp7Z9ySOtZ18CtjrWj+JjXk=
 		</data>
 		<key>Headers/STPUserModel.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		6YT7tf66S0SfETCUqjPRZ9erl8s=
+		FnXOKhIoBd8H6BFsvR3RoH7V9os=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,11 +70,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ikw3TuLMrowRqSPlI31PIUoOLhI=
+			RDVyfB2APYUWZMSaqhQ5lJIKlBU=
 			</data>
 			<key>hash2</key>
 			<data>
-			3wOqnq4XX+uKJZqiB/xkdb+SimiRIpzFD1xmypwD1Z8=
+			QIQu1uCSj02vnpbXdXbhJrzhq9hIKjeX+FXBzoFQ6eE=
 			</data>
 		</dict>
 		<key>Headers/STPDeviceApi.h</key>
@@ -125,22 +125,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qB08GlA/2C9Zq3CXzQVkCibwJzQ=
+			QnOI2umfgSv8kFRQ5l04i5+hbyo=
 			</data>
 			<key>hash2</key>
 			<data>
-			NN1rnptffah2kHhOIN21Cyr/qiWTyZgTsIkoeqqkf28=
+			t0QlX0F+ggU2UGzjU40zxI7iAIcV5LeS+ykYs6D187s=
 			</data>
 		</dict>
 		<key>Headers/STPStudyReportModel.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			B7dX4SzMAG0kthX6gWxw+jNaUL0=
+			TWKFfp7Z9ySOtZ18CtjrWj+JjXk=
 			</data>
 			<key>hash2</key>
 			<data>
-			ia80kVrnjk/OOhRpFBEbwnubDK4KHVwefesya6diQyU=
+			WVOR9nOeqPNgxXVbLLlbMj9VkKzj/+nKQ/DhLsiaLos=
 			</data>
 		</dict>
 		<key>Headers/STPUserModel.h</key>

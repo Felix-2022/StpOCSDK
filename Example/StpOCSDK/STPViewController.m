@@ -77,12 +77,12 @@
         @"删除绘本",
         @"获取设备端绘本列表",
         @"获取设备端存储卡容量信息",
-        @"当天跟读测评 ",
-        @"获取前几天跟读测评",
-        @"获取当天阅读详情 ",
-        @"获取前几天阅读详情",
-        @"获取过去几天的点读趋势详情",
-        @"获取过去几天的学习时长趋势详情",
+        @"获取当天跟读测评 （今天） ",
+        @"获取数量顺序跟读测评",
+        @"获取过去7天阅读详情 ",
+        @"获取数量顺序阅读详情",
+        @"获取过去7天的点读趋势详情",
+        @"获取过去7天的学习时长趋势详情",
         @"手机号是否注册过",
         @"获取已添加到设备上的点读包列表",
         @" 获取全部可用的点读包列表"
@@ -274,8 +274,9 @@
             break;
         case 12:
         {
-            
-            [STPStudyReportApi getTodayFollowReadingListWithType:@"follow-reading" andCallback:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
+            NSString *start = [self currentDateStr];
+            NSString *end = start;
+            [STPStudyReportApi getStudyAchieveData:@"follow-reading" startDate:start endDate:end block:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
                 NSLog(@"获取当天跟读测评 （今天）:%@",error);
                 if (error) {
                     message = error.description;
@@ -288,8 +289,8 @@
             break;
         case 13:
         {
-            [STPStudyReportApi getPassdayFollowReadingListWithType:@"follow-reading" andPassDay:7 andCallback:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
-                NSLog(@"获取前几天跟读测评:%@",error);
+            [STPStudyReportApi getStudyAchieveData:@"follow-reading" fromId:0 count:20 block:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取数量顺序跟读测评:%@",error);
                 if (error) {
                     message = error.description;
                 } else {
@@ -301,9 +302,10 @@
             break;
         case 14:
         {
-            
-            [STPStudyReportApi getTodayReadBookListCallback:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
-                NSLog(@"获取当天阅读详情 （当天）:%@",error);
+            NSString *start = [self passTimeDateStr:7];
+            NSString *end = [self passTimeDateStr:1];
+            [STPStudyReportApi getTodayReadBookListStartDate:start endDate:end block:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取过去7天阅读详情 :%@",error);
                 
                 if (error) {
                     message = error.description;
@@ -316,8 +318,8 @@
             break;
         case 15:
         {
-            [STPStudyReportApi getPassdayReadBookListWithPassDay:7 andCallback:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
-                NSLog(@"获取前几天阅读详情 :%@",error);
+            [STPStudyReportApi getTodayReadBookListFromId:0 count:20 block:^(STPFollowReadResultModel * _Nullable detailModel, NSError * _Nullable error) {
+                NSLog(@"获取数量顺序阅读详情 :%@",error);
                 if (error) {
                     message = error.description;
                 } else {
@@ -329,7 +331,9 @@
             break;
         case 16:
         {
-            [STPStudyReportApi getPassdayTrendListWithType:@"point-reading" andPassDay:7 andCallback:^(STPTrendListModel * _Nullable detailModel, NSError * _Nullable error) {
+            NSString *start = [self passTimeDateStr:7];
+            NSString *end = [self passTimeDateStr:1];
+            [STPStudyReportApi getPassdayTrendListWithType:@"point-reading" StartDate:start endDate:end andCallback:^(STPTrendListModel * _Nullable detailModel, NSError * _Nullable error) {
                 NSLog(@"获取过去几天的点读详情:%@",error);
                 if (error) {
                     message = error.description;
@@ -342,7 +346,9 @@
             break;
         case 17:
         {
-            [STPStudyReportApi getPassdayTrendListWithType:@"duration" andPassDay:7 andCallback:^(STPTrendListModel * _Nullable detailModel, NSError * _Nullable error) {
+            NSString *start = [self passTimeDateStr:7];
+            NSString *end = [self passTimeDateStr:1];
+            [STPStudyReportApi getPassdayTrendListWithType:@"duration" StartDate:start endDate:end andCallback:^(STPTrendListModel * _Nullable detailModel, NSError * _Nullable error) {
                 NSLog(@"获取过去几天的读书时长 （按照数量进行选择）:%@",error);
                 if (error) {
                     message = error.description;
@@ -401,6 +407,55 @@
     [self.alertVc addAction :sureBtn];
     //展示
     [self presentViewController:self.alertVc animated:YES completion:nil];
+}
+
+- (NSString *)currentDateStr{
+    NSDate *currentDate = [NSDate date];//获取当前时间，日期
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    // [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss SS"];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+    NSString *dateString = [dateFormatter stringFromDate:currentDate];
+    return dateString;
+}
+
+- (NSString *)passTimeDateStr:(NSInteger)dayCount {
+    if (dayCount > 0) {
+        NSDate *nowDate = [NSDate date];
+        NSDate *theDate;
+        NSTimeInterval oneDay = 24*60*60*1;  //1天的长度
+        theDate = [nowDate initWithTimeIntervalSinceNow: -oneDay*dayCount];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        //设定时间格式,这里可以设置成自己需要的格式
+        // [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss SS"];
+        [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+        NSString *dateString = [dateFormatter stringFromDate:theDate];
+        return dateString;
+    }
+    return [self currentDateStr];
+}
+
+- (NSString *)passMMDDDateStr:(NSInteger)dayCount {
+    if (dayCount > 0) {
+        NSDate *nowDate = [NSDate date];
+        NSDate *theDate;
+        NSTimeInterval oneDay = 24*60*60*1;  //1天的长度
+        theDate = [nowDate initWithTimeIntervalSinceNow: -oneDay*dayCount];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        //设定时间格式,这里可以设置成自己需要的格式
+        // [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss SS"];
+        [dateFormatter setDateFormat:@"MM/dd"];
+        NSString *dateString = [dateFormatter stringFromDate:theDate];
+        return dateString;
+    }
+    
+    NSDate *currentDate = [NSDate date];//获取当前时间，日期
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    // [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss SS"];
+    [dateFormatter setDateFormat:@"MM/dd"];
+    NSString *dateString = [dateFormatter stringFromDate:currentDate];
+    return dateString;
 }
 
 @end
