@@ -31,9 +31,9 @@
     [self.view addSubview:self.tableView];
     STPAccessConfiger.developEnv = Env_Development;//开发环境
 //    STPAccessConfiger.developEnv = Env_Distribution;//生产环境
-    [STPAccessConfiger setPackageId:@"stp.sdk" ];
+    [STPAccessConfiger setPackageId:@"hxd.app" ];
     
-    [STPAuthApi login:@"17623251607" passWord:@"12345678" pushId:@"" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
+    [STPAuthApi login:@"13552966915" passWord:@"111111" pushId:@"" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
         NSString *tips = @"登录成功";
         NSString *message = @"点击下面列表测试";
         if (error) {
@@ -376,7 +376,7 @@
         }
             break;
         case 20:{
-            [STPPictureBookApi getAllPackageList:@"english" resourceId:0 count:20 block:^(STPPicBookResourceList * _Nullable list, NSError * _Nullable error) {
+            [STPPictureBookApi getAllPackageListResourceId:0 count:20 block:^(STPPicBookResourceList * _Nullable list, NSError * _Nullable error) {
                 if (error) {
                     message = error.description;
                 } else {

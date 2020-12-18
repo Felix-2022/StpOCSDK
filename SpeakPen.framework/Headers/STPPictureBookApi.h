@@ -50,11 +50,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  获取全部可用的点读包列表
- @param name 点读包名称
  @param resourceID  最后一条绘本ID，0表示获取首页（必选）
  @param count 每页返回的数量，可选范围1-50，建议值20 （必选）
  */
-+ (void )getAllPackageList:(NSString *)name resourceId:(NSInteger)resourceID count:(NSInteger)count block:(nullable void (^)(STPPicBookResourceList* _Nullable list,NSError * _Nullable error))block;
++ (void )getAllPackageListResourceId:(NSInteger)resourceID count:(NSInteger)count block:(nullable void (^)(STPPicBookResourceList* _Nullable list,NSError * _Nullable error))block;
 
 @end
 
