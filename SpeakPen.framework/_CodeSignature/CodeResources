@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/STPPictureBookApi.h</key>
 		<data>
-		v595RKn4hvGXjDrdzK4PNLiWJh4=
+		srom8CZFKkCkY33javYozwkAV2s=
 		</data>
 		<key>Headers/STPStudyReportApi.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		FnXOKhIoBd8H6BFsvR3RoH7V9os=
+		GVM5+umbUdTXPYJm6wCrdP8xUo8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -114,11 +114,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			v595RKn4hvGXjDrdzK4PNLiWJh4=
+			srom8CZFKkCkY33javYozwkAV2s=
 			</data>
 			<key>hash2</key>
 			<data>
-			fTbYuYgnOEDQGXHcVSHuU7p+mWTmGG07iOyPdLsdfQg=
+			/GRymTi/KGKpUU9ez5aobpE9VkwUfztKlYLc/mf+Ed4=
 			</data>
 		</dict>
 		<key>Headers/STPStudyReportApi.h</key>

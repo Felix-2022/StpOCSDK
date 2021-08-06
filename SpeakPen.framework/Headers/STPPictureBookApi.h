@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void )getPicbookDetail:(NSString *)picBookId block:(nullable void (^)(STPPicBookDetailModel * _Nullable detailModel,NSError * _Nullable error))block;
 
 /// 下载绘本或点读包
-/// @param picBookId 绘本ID
+/// @param picBookId 需要传入资源的 mid参数
 + (void )addBookDownloadToDevice:(NSString *)picBookId block:(nullable void (^)(BOOL isSuss,NSError * _Nullable error))block;
 
 /// 删除绘本（单本、批量：批量每次最多删除10个数据）

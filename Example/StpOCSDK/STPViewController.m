@@ -31,7 +31,7 @@
     [self.view addSubview:self.tableView];
     STPAccessConfiger.developEnv = Env_Development;//开发环境
 //    STPAccessConfiger.developEnv = Env_Distribution;//生产环境
-    [STPAccessConfiger setPackageId:@"hxd.app" ];
+    [STPAccessConfiger setPackageId:@"jlgl.sdk"];
     
     [STPAuthApi login:@"13552966915" passWord:@"111111" pushId:@"" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
         NSString *tips = @"登录成功";
@@ -41,8 +41,8 @@
             message = error.description;
         } else {
             if (user.devices.count > 0) {
-                NSString* deviceId =[[user.devices firstObject] deviceID];
-                NSString* appId =[[user.devices firstObject] appId] ;
+                NSString* deviceId =[[user.devices lastObject] deviceID];
+                NSString* appId =[[user.devices lastObject] appId] ;
                 NSLog(@"deviceId:%@,appId:%@",deviceId,appId);
                 
                 [STPAccessConfiger setCurrDeviceID:deviceId appId:appId   ];
@@ -189,8 +189,14 @@
                     message = error.description;
                 } else {
                     if (list.lists.count > 0) {
-                        STPPicBookResourceModel *model = [list.lists firstObject];
-                        self.picbookId = model.mid;
+                        [list.lists enumerateObjectsUsingBlock:^(STPPicBookResourceModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                            if (obj.downloadable == 1 && obj.status == 0) {
+                                STPPicBookResourceModel *model = obj;
+                                self.picbookId = model.mid;
+                                *stop = YES;
+                            }
+                        }];
+                        
                     }
                     message = [list yy_modelToJSONString];
                 }
