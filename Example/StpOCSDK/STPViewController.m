@@ -33,7 +33,7 @@
 //    STPAccessConfiger.developEnv = Env_Distribution;//生产环境
     [STPAccessConfiger setPackageId:@"jlgl.sdk"];
     
-    [STPAuthApi login:@"13552966915" passWord:@"111111" pushId:@"" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
+    [STPAuthApi login:@"17623251607" passWord:@"12345678" pushId:@"" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
         NSString *tips = @"登录成功";
         NSString *message = @"点击下面列表测试";
         if (error) {
