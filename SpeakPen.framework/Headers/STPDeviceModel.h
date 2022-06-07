@@ -32,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) NSInteger volume;// 设备类型
 @property (nonatomic,strong) NSString *appId;
 @property (nonatomic,strong) NSString *wifissid;
+@property (nonatomic,strong) NSString *version;//设备固件版本
 @end
 
 @interface STPHardwareModel : NSObject<NSCoding>

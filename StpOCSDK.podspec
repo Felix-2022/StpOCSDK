@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'StpOCSDK'
-  s.version          = '0.3.17'
+  s.version          = '0.3.18'
   s.summary          = 'StpOCSDK'
 
 # This description is used to generate tags and improve search results.
