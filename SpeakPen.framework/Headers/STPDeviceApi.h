@@ -40,14 +40,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  解除绑定当前的设备
+ @param isClean 是否清楚设备纪录
  */
-+ (void)unbindDevice:(void (^)(BOOL isSuccess,NSError *_Nullable error)) block;
++ (void)unbindDeviceWithCleanTask:(BOOL)isClean block:(void (^)(BOOL isSuccess,NSError *_Nullable error)) block;
 
 #pragma mark ------------------- 设备控制 ------------------------
+
 /**
  修改设备音量
  @param voiceValue 音量值 最小值0 最大值100
-
  */
 + (void)changeDeviceVolume:(NSInteger )voiceValue block:(void (^)(BOOL isSuccess,NSError* _Nullable error)) block;
 
