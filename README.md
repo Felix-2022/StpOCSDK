@@ -110,9 +110,9 @@ STPAccessConfiger.developEnv = Env_Development;
 /**
  第三方登录
 
- @param phone 手机号码
- @param passwd 用户密码
- @param thirdCode 第三方code
+ @param phone 客户用户唯一标识
+ @param passwd 用户密码（可以传空字符）
+ @param thirdCode 客户用户token鉴权码
  */
 +(void)loginEx:(NSString*)phone passwd:(NSString*)passwd thirdCode:(NSString*)thirdCode block:(void (^)(STPUserModel *user,NSError *error))block;
 ```
