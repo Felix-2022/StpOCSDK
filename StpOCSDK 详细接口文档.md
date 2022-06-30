@@ -90,8 +90,8 @@ STPAccessConfiger.developEnv = Env_Development;
 获取登录后的用户信息
 token = STPAccessConfiger.accessToken;
 userID = STPAccessConfiger.userID;
-appID = STPAccessConfiger.appID);
-
+appID = STPAccessConfiger.appID;
+currDeviceID = STPAccessConfiger.currDeviceID; // 当前选中的设备ID，当切换控制设备时，需要修改currDeviceID值 ,设置方法： [STPAccessConfiger setCurrDeviceID:deviceId appId:appId];
 ```
 
 ### 登录流程
