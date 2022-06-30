@@ -48,9 +48,12 @@
                 [STPAccessConfiger setCurrDeviceID:deviceId appId:appId   ];
             }
         }
-        self.alertVc = [UIAlertController alertControllerWithTitle:tips message:message preferredStyle:UIAlertControllerStyleAlert];
+        self.alertVc = [UIAlertController alertControllerWithTitle:tips message:STPAccessConfiger.accessToken preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *sureBtn = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull   action) {
             NSLog(@"确定");
+            NSLog(@"token =%@",STPAccessConfiger.accessToken);
+            NSLog(@"userID =%@",STPAccessConfiger.userID);
+            NSLog(@"appID =%@",STPAccessConfiger.appID);
         }];
         [sureBtn setValue:[UIColor redColor] forKey:@"titleTextColor"];
         //将action添加到控制器

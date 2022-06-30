@@ -87,6 +87,11 @@ pod 'StpOCSDK'
 STPAccessConfiger.developEnv = Env_Development;
 [STPAccessConfiger setPackageId:@"输入分配给您的PackageId"];
 
+获取登录后的用户信息
+token = STPAccessConfiger.accessToken;
+userID = STPAccessConfiger.userID;
+appID = STPAccessConfiger.appID);
+
 ```
 
 ### 登录流程
