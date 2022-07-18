@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) BOOL power;//是否在充电中
 @property (nonatomic,assign) BOOL power_supply;// 是否连接电源
 @property (nonatomic,strong) NSString *device_type;// 设备类型
-@property (nonatomic,assign) NSInteger volume;// 设备类型
+@property (nonatomic,assign) NSInteger volume;
 @property (nonatomic,strong) NSString *appId;
 @property (nonatomic,strong) NSString *wifissid;
 @property (nonatomic,strong) NSString *version;//设备固件版本

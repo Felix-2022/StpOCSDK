@@ -1,4 +1,6 @@
 # StpOCSDK
+# 版本纪录 0.3.20 （新增设备属性：设备version, 解绑设备新增清楚设备学习纪录参数）
+
 SDK 以 pod 引入方式 获取。pod = ' StpOCSDK '  SDK 包括：
 
 

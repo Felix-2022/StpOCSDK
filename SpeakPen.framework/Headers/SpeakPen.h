@@ -10,6 +10,8 @@
 #import <SpeakPen/STPPicBookResourceModel.h>
 #import <SpeakPen/STPStudyReportApi.h>
 #import <SpeakPen/STPStudyReportModel.h>
+#import <SpeakPen/STPWordDeviceNetworkApi.h>
+#import <SpeakPen/STPWordDeviceModel.h>
 
 //! Project version number for SpeakPen.
 FOUNDATION_EXPORT double SpeakPenVersionNumber;

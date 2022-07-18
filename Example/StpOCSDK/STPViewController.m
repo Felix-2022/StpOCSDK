@@ -8,6 +8,8 @@
 #import <SpeakPen/STPPicBookResourceModel.h>
 #import <SpeakPen/STPStudyReportApi.h>
 #import <SpeakPen/STPStudyReportModel.h>
+#import <SpeakPen/STPStudyReportModel.h>
+#import <SpeakPen/STPWordDeviceNetworkApi.h>
 #import <YYModel.h>
 
 @interface STPViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -31,9 +33,9 @@
     [self.view addSubview:self.tableView];
     STPAccessConfiger.developEnv = Env_Development;//开发环境
 //    STPAccessConfiger.developEnv = Env_Distribution;//生产环境
-    [STPAccessConfiger setPackageId:@"jlgl.sdk"];
+    [STPAccessConfiger setPackageId:@"hxd.app"];
     
-    [STPAuthApi login:@"17623251607" passWord:@"12345678" pushId:@"" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
+    [STPAuthApi login:@"17705121228" passWord:@"123456" pushId:@"" completionBlock:^(STPUserModel * _Nonnull user, NSError * _Nonnull error) {
         NSString *tips = @"登录成功";
         NSString *message = @"点击下面列表测试";
         if (error) {
@@ -41,10 +43,10 @@
             message = error.description;
         } else {
             if (user.devices.count > 0) {
-                NSString* deviceId =[[user.devices lastObject] deviceID];
-                NSString* appId =[[user.devices lastObject] appId] ;
+                NSString* deviceId =[[user.devices objectAtIndex:1] deviceID];
+                NSString* appId = [[user.devices objectAtIndex:1] appId] ;
                 NSLog(@"deviceId:%@,appId:%@",deviceId,appId);
-                
+
                 [STPAccessConfiger setCurrDeviceID:deviceId appId:appId];
             }
         }
@@ -88,7 +90,9 @@
         @"获取过去7天的学习时长趋势详情",
         @"手机号是否注册过",
         @"获取已添加到设备上的点读包列表",
-        @" 获取全部可用的点读包列表"
+        @" 获取全部可用的点读包列表",
+        @"获取词库列表cId ",
+        @"获取词库cid 对应的词库列表 "
     ];
 }
 
@@ -412,6 +416,29 @@
                     message = error.description;
                 } else {
                     message = [list yy_modelToJSONString];
+                }
+                [self showMessage:message];
+            }];
+        }
+            break;
+        case 21:{
+            [STPWordDeviceNetworkApi getWordDictCategoryWith:0 andDictType:@"small" andCallback:^(NSArray<STPWordDeviceCategoryDictModel *> * _Nonnull wordDictList, NSError * _Nullable error) {
+                if (error) {
+                    message = error.description;
+                } else {
+                    message = [wordDictList yy_modelToJSONString];
+                }
+                [self showMessage:message];
+            }];
+        }
+            break;
+        case 22:{
+            [STPWordDeviceNetworkApi getWordDictListWithDictType:@"small" andCategoryId:10 andPage:@(1)
+                                                     andPageSize:@(20) andCallback:^(STPWordDeviceDictListModel * _Nullable listModel, NSError * _Nullable error) {
+                if (error) {
+                    message = error.description;
+                } else {
+                    message = [listModel yy_modelToJSONString];
                 }
                 [self showMessage:message];
             }];
