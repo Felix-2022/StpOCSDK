@@ -9,7 +9,7 @@
 #import <SpeakPen/STPStudyReportApi.h>
 #import <SpeakPen/STPStudyReportModel.h>
 #import <SpeakPen/STPStudyReportModel.h>
-#import <SpeakPen/STPWordDeviceNetworkApi.h>
+//#import <SpeakPen/STPWordDeviceNetworkApi.h>
 #import <YYModel.h>
 
 @interface STPViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -422,26 +422,26 @@
         }
             break;
         case 21:{
-            [STPWordDeviceNetworkApi getWordDictCategoryWith:0 andDictType:@"small" andCallback:^(NSArray<STPWordDeviceCategoryDictModel *> * _Nonnull wordDictList, NSError * _Nullable error) {
-                if (error) {
-                    message = error.description;
-                } else {
-                    message = [wordDictList yy_modelToJSONString];
-                }
-                [self showMessage:message];
-            }];
+//            [STPWordDeviceNetworkApi getWordDictCategoryWith:0 andDictType:@"small" andCallback:^(NSArray<STPWordDeviceCategoryDictModel *> * _Nonnull wordDictList, NSError * _Nullable error) {
+//                if (error) {
+//                    message = error.description;
+//                } else {
+//                    message = [wordDictList yy_modelToJSONString];
+//                }
+//                [self showMessage:message];
+//            }];
         }
             break;
         case 22:{
-            [STPWordDeviceNetworkApi getWordDictListWithDictType:@"small" andCategoryId:10 andPage:@(1)
-                                                     andPageSize:@(20) andCallback:^(STPWordDeviceDictListModel * _Nullable listModel, NSError * _Nullable error) {
-                if (error) {
-                    message = error.description;
-                } else {
-                    message = [listModel yy_modelToJSONString];
-                }
-                [self showMessage:message];
-            }];
+//            [STPWordDeviceNetworkApi getWordDictListWithDictType:@"small" andCategoryId:10 andPage:@(1)
+//                                                     andPageSize:@(20) andCallback:^(STPWordDeviceDictListModel * _Nullable listModel, NSError * _Nullable error) {
+//                if (error) {
+//                    message = error.description;
+//                } else {
+//                    message = [listModel yy_modelToJSONString];
+//                }
+//                [self showMessage:message];
+//            }];
         }
             break;
         default:

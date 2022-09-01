@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/STPDeviceModel.h</key>
 		<data>
-		MaKTn86eVLrFg95BKgmMqjRZRxw=
+		gNlH0U2/ZWhgEOL8WT18kdh87rY=
 		</data>
 		<key>Headers/STPPicBookResourceModel.h</key>
 		<data>
@@ -40,17 +40,9 @@
 		<data>
 		J65aeNu9BiMN4I9H7IPHOE55CiA=
 		</data>
-		<key>Headers/STPWordDeviceModel.h</key>
-		<data>
-		W4lSGn9AD4+ttNEP4F63eTQpcKo=
-		</data>
-		<key>Headers/STPWordDeviceNetworkApi.h</key>
-		<data>
-		jNw6mf8jpsGCPmFtjoUJrYDGYms=
-		</data>
 		<key>Headers/SpeakPen.h</key>
 		<data>
-		qc1mibz/xOc9VkEoA6GUpw6wG/w=
+		YGzPBbM3TmV5va/acX35mS6CX9c=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -59,18 +51,6 @@
 		<key>Modules/module.modulemap</key>
 		<data>
 		qO0dEeG1WfTCoh1zuq+l3/DLAwM=
-		</data>
-		<key>PrivateHeaders/NSArray+STPExtension.h</key>
-		<data>
-		vVrbhndyrE+9XEnjK23y4j0/vfo=
-		</data>
-		<key>PrivateHeaders/NSDictionary+STPExtension.h</key>
-		<data>
-		FuAeomnGhyk88xKxy0EDEkkdTik=
-		</data>
-		<key>PrivateHeaders/NSObject+STPSafe.h</key>
-		<data>
-		NtNMOICNUXZJ+DxifTw/+4itJGc=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -112,11 +92,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MaKTn86eVLrFg95BKgmMqjRZRxw=
+			gNlH0U2/ZWhgEOL8WT18kdh87rY=
 			</data>
 			<key>hash2</key>
 			<data>
-			n6zLA2MZ9tf9IblJ7Oc6lxmcTHcqu+QHjs18Nw0Z8A8=
+			AhH/nI2T28AlyJyeSjcScqRDOePXwR2BIGzTFbEklrM=
 			</data>
 		</dict>
 		<key>Headers/STPPicBookResourceModel.h</key>
@@ -174,37 +154,15 @@
 			yugh3VApmYdHkWo5nVGVFEdIOMo2bStH7glI15zNk7c=
 			</data>
 		</dict>
-		<key>Headers/STPWordDeviceModel.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			W4lSGn9AD4+ttNEP4F63eTQpcKo=
-			</data>
-			<key>hash2</key>
-			<data>
-			ENOmBqp+TBdVsYwVjFrEDbDvXJWmry+tx++/ND+vEzM=
-			</data>
-		</dict>
-		<key>Headers/STPWordDeviceNetworkApi.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			jNw6mf8jpsGCPmFtjoUJrYDGYms=
-			</data>
-			<key>hash2</key>
-			<data>
-			9olG3Tz2lwitLtq2gvThU6eppS+mdBMQiA20/6FGP28=
-			</data>
-		</dict>
 		<key>Headers/SpeakPen.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qc1mibz/xOc9VkEoA6GUpw6wG/w=
+			YGzPBbM3TmV5va/acX35mS6CX9c=
 			</data>
 			<key>hash2</key>
 			<data>
-			lBOdEYMzEVdZvTXBSFf0DSprTbVpbwV7/zyaWPEzRL4=
+			Iov4coznHY4+6fhX3ouy/J4bZNSf2O61RU+R0WmoX1I=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -216,39 +174,6 @@
 			<key>hash2</key>
 			<data>
 			WmuAJGSBpLGYkrDU9KergUVbrwwMcdKdmh1YD7wVayY=
-			</data>
-		</dict>
-		<key>PrivateHeaders/NSArray+STPExtension.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			vVrbhndyrE+9XEnjK23y4j0/vfo=
-			</data>
-			<key>hash2</key>
-			<data>
-			Ps8VnlvxPv9Z1ZcOWZVGvRv9BS081kLtEddHdtUiORw=
-			</data>
-		</dict>
-		<key>PrivateHeaders/NSDictionary+STPExtension.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			FuAeomnGhyk88xKxy0EDEkkdTik=
-			</data>
-			<key>hash2</key>
-			<data>
-			CGTuHQab3Mf2EgemPFX2NVF4WSUjOAhRyP/XVsXYEjY=
-			</data>
-		</dict>
-		<key>PrivateHeaders/NSObject+STPSafe.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			NtNMOICNUXZJ+DxifTw/+4itJGc=
-			</data>
-			<key>hash2</key>
-			<data>
-			ui63v9+qzFKdxO5JOZ7yVADfmMVWtpqbaklwhl2C9Ow=
 			</data>
 		</dict>
 	</dict>
