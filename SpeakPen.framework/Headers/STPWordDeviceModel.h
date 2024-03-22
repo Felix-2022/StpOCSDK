@@ -89,6 +89,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger study_word_count;     // 已学单词数
 @property (nonatomic, strong) STPWordDeviceDictDetailContentModel *content;
 @property (nonatomic, assign) STPWordDeviceDictDetailType dictType;      
+@property (nonatomic, assign) NSInteger type; // 类型 0词典 1诗词（三期）
+@property (nonatomic, assign) NSInteger mode; // 模式 0标准学习模式 1快速浏览模式（三期）
+@property (nonatomic, copy) NSString *deviceNeedDictType; // 设备需要的dictType
+@property (nonatomic, copy) NSString *deviceNeedDictName; // 设备需要的dictName
+
+/// 获取dictName
+/// - Parameter dictId: dictId 
+- (NSString *)getDeviceDictName:(NSNumber *)dictId;
 
 @end
 
@@ -111,6 +119,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface STPWordDeviceWordDetailModel : NSObject
 
 @property (nonatomic, assign) NSInteger w_id;
+@property (nonatomic, assign) NSInteger type; // 类型：1：单词 2：词组  101： 诗 102：词 103：古文 (三期)
 @property (nonatomic, assign) NSInteger listId;      // 当天
 @property (nonatomic, assign) NSInteger score;     // 复习词汇
 @property (nonatomic, assign) NSInteger star;     //
@@ -140,6 +149,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface STPWDStudyWordDetailModel : NSObject
 
 @property (nonatomic, assign) NSInteger w_id;
+@property (nonatomic, assign) NSInteger type; // 类型：1：单词 2：词组  101： 诗 102：词 103：古文 (三期)
 @property (nonatomic, assign) NSInteger listId;      // 当天
 @property (nonatomic, assign) NSInteger score;     // 复习词汇
 @property (nonatomic, assign) NSInteger star;     //

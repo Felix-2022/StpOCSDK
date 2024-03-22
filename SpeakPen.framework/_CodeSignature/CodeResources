@@ -4,13 +4,17 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/PrivacyInfo.xcprivacy</key>
+		<data>
+		U/LrQ4WFKWb68XeEBp91hR2Rkfg=
+		</data>
 		<key>Headers/STPAccessConfig.h</key>
 		<data>
 		GQX+ggwgMHjyMlsOOHe93gKe5pA=
 		</data>
 		<key>Headers/STPAuthApi.h</key>
 		<data>
-		RDVyfB2APYUWZMSaqhQ5lJIKlBU=
+		RUbzVX73rQJ1vQDG8qMWVfAqGz0=
 		</data>
 		<key>Headers/STPDeviceApi.h</key>
 		<data>
@@ -42,11 +46,11 @@
 		</data>
 		<key>Headers/STPWordDeviceModel.h</key>
 		<data>
-		W4lSGn9AD4+ttNEP4F63eTQpcKo=
+		HUJEhg5XU1wRKAJIyUXcbmtush4=
 		</data>
 		<key>Headers/STPWordDeviceNetworkApi.h</key>
 		<data>
-		jNw6mf8jpsGCPmFtjoUJrYDGYms=
+		07BbDI8roKPKVJscorK3g8A35yk=
 		</data>
 		<key>Headers/SpeakPen.h</key>
 		<data>
@@ -54,11 +58,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		rONpM/1m9u0CvrIv82hgDA1JIK4=
+		lXu5klzeXa2K47aGQWOgRNfntLA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		qO0dEeG1WfTCoh1zuq+l3/DLAwM=
+		OhqVw0LMuXHG91uXEYr8AuTQmPE=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		U/LrQ4WFKWb68XeEBp91hR2Rkfg=
 		</data>
 		<key>PrivateHeaders/NSArray+STPExtension.h</key>
 		<data>
@@ -75,6 +83,17 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			U/LrQ4WFKWb68XeEBp91hR2Rkfg=
+			</data>
+			<key>hash2</key>
+			<data>
+			Mh+w8ZpLW9xldIIP9CdQq513Pkju88LwTrwttb6F9Fg=
+			</data>
+		</dict>
 		<key>Headers/STPAccessConfig.h</key>
 		<dict>
 			<key>hash</key>
@@ -90,11 +109,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RDVyfB2APYUWZMSaqhQ5lJIKlBU=
+			RUbzVX73rQJ1vQDG8qMWVfAqGz0=
 			</data>
 			<key>hash2</key>
 			<data>
-			QIQu1uCSj02vnpbXdXbhJrzhq9hIKjeX+FXBzoFQ6eE=
+			z/hyeBXg2BZkiB6qSxz5o8Tb/2znMCF7WHoeX4+UWwQ=
 			</data>
 		</dict>
 		<key>Headers/STPDeviceApi.h</key>
@@ -178,22 +197,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			W4lSGn9AD4+ttNEP4F63eTQpcKo=
+			HUJEhg5XU1wRKAJIyUXcbmtush4=
 			</data>
 			<key>hash2</key>
 			<data>
-			ENOmBqp+TBdVsYwVjFrEDbDvXJWmry+tx++/ND+vEzM=
+			I3U5YDYD8gskcMRAlPYQ++eWU/O0WtUEr26viXD8JKE=
 			</data>
 		</dict>
 		<key>Headers/STPWordDeviceNetworkApi.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jNw6mf8jpsGCPmFtjoUJrYDGYms=
+			07BbDI8roKPKVJscorK3g8A35yk=
 			</data>
 			<key>hash2</key>
 			<data>
-			9olG3Tz2lwitLtq2gvThU6eppS+mdBMQiA20/6FGP28=
+			fB5lO4yDsgh3/Su7E4pdkckEX2FUu9vWT5hFJuFonek=
 			</data>
 		</dict>
 		<key>Headers/SpeakPen.h</key>
@@ -211,11 +230,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qO0dEeG1WfTCoh1zuq+l3/DLAwM=
+			OhqVw0LMuXHG91uXEYr8AuTQmPE=
 			</data>
 			<key>hash2</key>
 			<data>
-			WmuAJGSBpLGYkrDU9KergUVbrwwMcdKdmh1YD7wVayY=
+			62JiJY3Aoc6IE6i/IGK0mxWUEqflaQWGKW4TU90X43Y=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			U/LrQ4WFKWb68XeEBp91hR2Rkfg=
+			</data>
+			<key>hash2</key>
+			<data>
+			Mh+w8ZpLW9xldIIP9CdQq513Pkju88LwTrwttb6F9Fg=
 			</data>
 		</dict>
 		<key>PrivateHeaders/NSArray+STPExtension.h</key>

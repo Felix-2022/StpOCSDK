@@ -57,6 +57,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)login:(NSString*_Nonnull)phoneNum passWord:(NSString*_Nonnull)passWord pushId:(NSString*)pushId completionBlock:(nullable void (^)(STPUserModel * _Nullable user,NSError * _Nullable error)) completionBlock;
 
+/// 用户登录
+/// @param phoneNum 手机号码
+/// @param code 验证码
+/// @param pushId pushId
+/// @param completionBlock completionBlock
++ (void)login:(NSString*_Nonnull)phoneNum code:(NSString *_Nonnull)code pushId:(NSString*)pushId completionBlock:(nullable void (^)(STPUserModel * _Nullable user,NSError * _Nullable error)) completionBlock;
+
 /**
  第三方登录
 

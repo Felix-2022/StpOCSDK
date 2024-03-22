@@ -59,6 +59,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param block block
 + (void)getDeviceWordDictWith:(NSInteger)oType andCallback:(void (^)(STPWordDeviceDictDetailModel * _Nullable wordDictModel,NSError * _Nullable error))block;
 
+
+/// 获取设备词库列表设置 （多词库版本）
+/// otype 类型，0 public 1 appId 2 user 3 sn，本次用户自定词库设置为2
+/// @param block block
++ (void)getDeviceWordDictListWith:(NSInteger)oType andCallback:(void (^)(NSArray <STPWordDeviceDictDetailModel *> *wordDictList,NSError * _Nullable error))block;
+
 /// 查询词库分类
 /// @param pid 父类id，不填返回所有，填0返回一级分类
 /// @param dictType 词典类型 （单词机填写 @"small" 小型词库，适用于 卡片机）
@@ -97,19 +103,36 @@ NS_ASSUME_NONNULL_BEGIN
                               andPageSize:(NSNumber *)pageSize
                               andCallback:(void (^)(STPWordDeviceDictListModel * _Nullable listModel, NSError * _Nullable error))block;
 
-/// 保存词库设置 - done
+/// 保存词库设置 (单词库版本)
 /// @param d_id 词库id
 /// @param numPerDay 每天学习的单词数
 /// @param hasSentence 是否有例句
 /// @param hasExercise 是否有习题
 /// @param oType 类型
 /// @param block block
++ (void)uploadWordDictSet:(NSInteger)d_id andNumperDay:(NSInteger)numPerDay andHasSentence:(BOOL)hasSentence andHasExercise:(BOOL)hasExercise OType:(STP_oType)oType andCallback:(void (^)(BOOL, NSError * _Nullable))block;
+
+/// 保存词库设置 (多词库版本)
+/// @param d_id 词库id
+/// @param numPerDay 每天学习的单词数
+/// @param hasSentence 是否有例句
+/// @param hasExercise 是否有习题
+/// @param oType 类型
+/// @param clearDictHistory 是否清除前一个词库的学习记录，1是，0否，默认为1
+/// @param block block
 + (void)uploadWordDictSet:(NSInteger)d_id
              andNumperDay:(NSInteger)numPerDay
            andHasSentence:(BOOL)hasSentence
            andHasExercise:(BOOL)hasExercise
-           OType:(STP_oType)oType
+                    OType:(STP_oType)oType
+      andClearDictHistory:(BOOL)clearDictHistory
+                  andMode:(NSInteger)mode
               andCallback:(void (^)(BOOL isSuss,NSError * _Nullable error))block;
+
+/// 删除词库设置 （多词库版本）
+/// @param ids 词库id列表
+/// @param block block
++ (void)deleteDictWith:(NSArray *)ids andCallback:(void (^)(BOOL isSuss,NSError * _Nullable error))block;
 
 /// 设备学习记录上报
 /// @param listId 词库ID
